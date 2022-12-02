@@ -9,7 +9,10 @@
         {% if posts %}
             {% for post in posts %}
                 <tr>
+                    <td>{{ post.id }}</td>
                     <td>{{ post.gubun }}</td>
+                    <td>{{ post.isolclearcnt }}</td>
+                    <td>{{ post.stdday }}</td>
                 </tr>
             {% endfor %}
         {% endif %}

@@ -20,4 +20,5 @@ import board.views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('board/list/', board.views.list),
+    path('board/read', board.views.read, name='read'),
 ]

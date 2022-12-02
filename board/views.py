@@ -1,9 +1,23 @@
 from django.shortcuts import render
-from django.http import HttpResponse
-from .models import Test1
+
+from django.db.models import Q
+from board.models import Test4
+from datetime import datetime, timedelta
 
 def list(request):
-    print('1111111111111111')
-    posts = Test1.objects.all()
-    print('222222222222222222')
+    posts = Test4.objects.all()
+
     return render(request, 'board/list.html', {'posts': posts})
+
+def read(request):
+    posts = Test4.objects.all().order_by('-id')
+    q = datetime.now().date() - timedelta(1)
+    print("111111111111111")
+    print(q)
+    if q:
+        posts = posts.filter(stdday__icontains=f"{q}")
+        return render(request, 'board/list.html', {'posts': posts, 'q': q})
+
+    else:
+        return render(request, 'board/list.html')
+
