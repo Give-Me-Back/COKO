@@ -5,15 +5,17 @@
     <title>Title</title>
 </head>
 <body>
-    <table>
+    <table border="1">
         {% if posts %}
             {% for post in posts %}
+            {% if post.gubun == "서울" %}
                 <tr>
                     <td>{{ post.id }}</td>
                     <td>{{ post.gubun }}</td>
                     <td>{{ post.isolclearcnt }}</td>
                     <td>{{ post.stdday }}</td>
                 </tr>
+            {% endif %}
             {% endfor %}
         {% endif %}
     </table>
