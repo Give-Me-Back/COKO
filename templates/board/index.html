@@ -4,10 +4,11 @@
 <head>
   {% load humanize %}
   {% load static %}
+
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>Dashboard - NiceAdmin Bootstrap Template</title>
+  <title>COKO</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
@@ -38,6 +39,11 @@
   * Author: BootstrapMade.com
   * License: https://bootstrapmade.com/license/
   ======================================================== -->
+
+
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700);" rel="stylesheet" >
+
+
 </head>
 
 <body>
@@ -48,17 +54,12 @@
     <div class="d-flex align-items-center justify-content-center">
       <a href="/board/list/" class="logo d-flex align-items-center">
         <img src="assets/img/logo.png" alt="">
-        <span class="d-none d-lg-block">NiceAdmin</span>
+        <span class="d-none d-lg-block">COKO</span>
       </a>
       <i class="bi bi-list toggle-sidebar-btn"></i>
     </div><!-- End Logo -->
 
-    <div class="search-bar">
-      <form class="search-form d-flex align-items-center" method="POST" action="#">
-        <input type="text" name="query" placeholder="Search" title="Enter search keyword">
-        <button type="submit" title="Search"><i class="bi bi-search"></i></button>
-      </form>
-    </div><!-- End Search Bar -->
+
 
     <nav class="header-nav ms-auto">
       <ul class="d-flex align-items-center">
@@ -69,202 +70,10 @@
           </a>
         </li><!-- End Search Icon-->
 
-        <li class="nav-item dropdown">
 
-          <a class="nav-link nav-icon" href="#" data-bs-toggle="dropdown">
-            <i class="bi bi-bell"></i>
-            <span class="badge bg-primary badge-number">4</span>
-          </a><!-- End Notification Icon -->
 
-          <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow notifications">
-            <li class="dropdown-header">
-              You have 4 new notifications
-              <a href="#"><span class="badge rounded-pill bg-primary p-2 ms-2">View all</span></a>
-            </li>
-            <li>
-              <hr class="dropdown-divider">
-            </li>
 
-            <li class="notification-item">
-              <i class="bi bi-exclamation-circle text-warning"></i>
-              <div>
-                <h4>Lorem Ipsum</h4>
-                <p>Quae dolorem earum veritatis oditseno</p>
-                <p>30 min. ago</p>
-              </div>
-            </li>
 
-            <li>
-              <hr class="dropdown-divider">
-            </li>
-
-            <li class="notification-item">
-              <i class="bi bi-x-circle text-danger"></i>
-              <div>
-                <h4>Atque rerum nesciunt</h4>
-                <p>Quae dolorem earum veritatis oditseno</p>
-                <p>1 hr. ago</p>
-              </div>
-            </li>
-
-            <li>
-              <hr class="dropdown-divider">
-            </li>
-
-            <li class="notification-item">
-              <i class="bi bi-check-circle text-success"></i>
-              <div>
-                <h4>Sit rerum fuga</h4>
-                <p>Quae dolorem earum veritatis oditseno</p>
-                <p>2 hrs. ago</p>
-              </div>
-            </li>
-
-            <li>
-              <hr class="dropdown-divider">
-            </li>
-
-            <li class="notification-item">
-              <i class="bi bi-info-circle text-primary"></i>
-              <div>
-                <h4>Dicta reprehenderit</h4>
-                <p>Quae dolorem earum veritatis oditseno</p>
-                <p>4 hrs. ago</p>
-              </div>
-            </li>
-
-            <li>
-              <hr class="dropdown-divider">
-            </li>
-            <li class="dropdown-footer">
-              <a href="#">Show all notifications</a>
-            </li>
-
-          </ul><!-- End Notification Dropdown Items -->
-
-        </li><!-- End Notification Nav -->
-
-        <li class="nav-item dropdown">
-
-          <a class="nav-link nav-icon" href="#" data-bs-toggle="dropdown">
-            <i class="bi bi-chat-left-text"></i>
-            <span class="badge bg-success badge-number">3</span>
-          </a><!-- End Messages Icon -->
-
-          <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow messages">
-            <li class="dropdown-header">
-              You have 3 new messages
-              <a href="#"><span class="badge rounded-pill bg-primary p-2 ms-2">View all</span></a>
-            </li>
-            <li>
-              <hr class="dropdown-divider">
-            </li>
-
-            <li class="message-item">
-              <a href="#">
-                <img src="assets/img/messages-1.jpg" alt="" class="rounded-circle">
-                <div>
-                  <h4>Maria Hudson</h4>
-                  <p>Velit asperiores et ducimus soluta repudiandae labore officia est ut...</p>
-                  <p>4 hrs. ago</p>
-                </div>
-              </a>
-            </li>
-            <li>
-              <hr class="dropdown-divider">
-            </li>
-
-            <li class="message-item">
-              <a href="#">
-                <img src="assets/img/messages-2.jpg" alt="" class="rounded-circle">
-                <div>
-                  <h4>Anna Nelson</h4>
-                  <p>Velit asperiores et ducimus soluta repudiandae labore officia est ut...</p>
-                  <p>6 hrs. ago</p>
-                </div>
-              </a>
-            </li>
-            <li>
-              <hr class="dropdown-divider">
-            </li>
-
-            <li class="message-item">
-              <a href="#">
-                <img src="assets/img/messages-3.jpg" alt="" class="rounded-circle">
-                <div>
-                  <h4>David Muldon</h4>
-                  <p>Velit asperiores et ducimus soluta repudiandae labore officia est ut...</p>
-                  <p>8 hrs. ago</p>
-                </div>
-              </a>
-            </li>
-            <li>
-              <hr class="dropdown-divider">
-            </li>
-
-            <li class="dropdown-footer">
-              <a href="#">Show all messages</a>
-            </li>
-
-          </ul><!-- End Messages Dropdown Items -->
-
-        </li><!-- End Messages Nav -->
-
-        <li class="nav-item dropdown pe-3">
-
-          <a class="nav-link nav-profile d-flex align-items-center pe-0" href="#" data-bs-toggle="dropdown">
-            <img src="assets/img/profile-img.jpg" alt="Profile" class="rounded-circle">
-            <span class="d-none d-md-block dropdown-toggle ps-2">K. Anderson</span>
-          </a><!-- End Profile Iamge Icon -->
-
-          <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow profile">
-            <li class="dropdown-header">
-              <h6>Kevin Anderson</h6>
-              <span>Web Designer</span>
-            </li>
-            <li>
-              <hr class="dropdown-divider">
-            </li>
-
-            <li>
-              <a class="dropdown-item d-flex align-items-center" href="users-profile.html">
-                <i class="bi bi-person"></i>
-                <span>My Profile</span>
-              </a>
-            </li>
-            <li>
-              <hr class="dropdown-divider">
-            </li>
-
-            <li>
-              <a class="dropdown-item d-flex align-items-center" href="users-profile.html">
-                <i class="bi bi-gear"></i>
-                <span>Account Settings</span>
-              </a>
-            </li>
-            <li>
-              <hr class="dropdown-divider">
-            </li>
-
-            <li>
-              <a class="dropdown-item d-flex align-items-center" href="pages-faq.html">
-                <i class="bi bi-question-circle"></i>
-                <span>Need Help?</span>
-              </a>
-            </li>
-            <li>
-              <hr class="dropdown-divider">
-            </li>
-
-            <li>
-              <a class="dropdown-item d-flex align-items-center" href="#">
-                <i class="bi bi-box-arrow-right"></i>
-                <span>Sign Out</span>
-              </a>
-            </li>
-
-          </ul><!-- End Profile Dropdown Items -->
-        </li><!-- End Profile Nav -->
 
       </ul>
     </nav><!-- End Icons Navigation -->
@@ -277,93 +86,28 @@
     <ul class="sidebar-nav" id="sidebar-nav">
 
       <li class="nav-item">
-        <a class="nav-link " href="index.html">
+        <a class="nav-link " href="/board/list/">
           <i class="bi bi-grid"></i>
           <span>Dashboard</span>
         </a>
       </li><!-- End Dashboard Nav -->
 
       <li class="nav-item">
-        <a class="nav-link collapsed" data-bs-target="#components-nav" data-bs-toggle="collapse" href="#">
-          <i class="bi bi-menu-button-wide"></i><span>Components</span><i class="bi bi-chevron-down ms-auto"></i>
+        <a class="nav-link collapsed" data-bs-target="#components-nav"  href="/board/News">
+          <i class="bi bi-ui-checks"></i><span>코로나 뉴스</span></i>
         </a>
         <ul id="components-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
           <li>
-            <a href="components-alerts.html">
+            <a href="/board/News/">
               <i class="bi bi-circle"></i><span>Alerts</span>
-            </a>
-          </li>
-          <li>
-            <a href="components-accordion.html">
-              <i class="bi bi-circle"></i><span>Accordion</span>
-            </a>
-          </li>
-          <li>
-            <a href="components-badges.html">
-              <i class="bi bi-circle"></i><span>Badges</span>
-            </a>
-          </li>
-          <li>
-            <a href="components-breadcrumbs.html">
-              <i class="bi bi-circle"></i><span>Breadcrumbs</span>
-            </a>
-          </li>
-          <li>
-            <a href="components-buttons.html">
-              <i class="bi bi-circle"></i><span>Buttons</span>
-            </a>
-          </li>
-          <li>
-            <a href="components-cards.html">
-              <i class="bi bi-circle"></i><span>Cards</span>
-            </a>
-          </li>
-          <li>
-            <a href="components-carousel.html">
-              <i class="bi bi-circle"></i><span>Carousel</span>
-            </a>
-          </li>
-          <li>
-            <a href="components-list-group.html">
-              <i class="bi bi-circle"></i><span>List group</span>
-            </a>
-          </li>
-          <li>
-            <a href="components-modal.html">
-              <i class="bi bi-circle"></i><span>Modal</span>
-            </a>
-          </li>
-          <li>
-            <a href="components-tabs.html">
-              <i class="bi bi-circle"></i><span>Tabs</span>
-            </a>
-          </li>
-          <li>
-            <a href="components-pagination.html">
-              <i class="bi bi-circle"></i><span>Pagination</span>
-            </a>
-          </li>
-          <li>
-            <a href="components-progress.html">
-              <i class="bi bi-circle"></i><span>Progress</span>
-            </a>
-          </li>
-          <li>
-            <a href="components-spinners.html">
-              <i class="bi bi-circle"></i><span>Spinners</span>
-            </a>
-          </li>
-          <li>
-            <a href="components-tooltips.html">
-              <i class="bi bi-circle"></i><span>Tooltips</span>
             </a>
           </li>
         </ul>
       </li><!-- End Components Nav -->
 
       <li class="nav-item">
-        <a class="nav-link collapsed" data-bs-target="#forms-nav" data-bs-toggle="collapse" href="#">
-          <i class="bi bi-journal-text"></i><span>Forms</span><i class="bi bi-chevron-down ms-auto"></i>
+        <a class="nav-link collapsed" data-bs-target="#forms-nav"  href="https://github.com/orgs/Give-Me-Back/repositories">
+          <i class="bi bi-github"></i><span>Github</span></i>
         </a>
         <ul id="forms-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
           <li>
@@ -388,124 +132,7 @@
           </li>
         </ul>
       </li><!-- End Forms Nav -->
-
-      <li class="nav-item">
-        <a class="nav-link collapsed" data-bs-target="#tables-nav" data-bs-toggle="collapse" href="#">
-          <i class="bi bi-layout-text-window-reverse"></i><span>Tables</span><i class="bi bi-chevron-down ms-auto"></i>
-        </a>
-        <ul id="tables-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
-          <li>
-            <a href="tables-general.html">
-              <i class="bi bi-circle"></i><span>General Tables</span>
-            </a>
-          </li>
-          <li>
-            <a href="tables-data.html">
-              <i class="bi bi-circle"></i><span>Data Tables</span>
-            </a>
-          </li>
-        </ul>
-      </li><!-- End Tables Nav -->
-
-      <li class="nav-item">
-        <a class="nav-link collapsed" data-bs-target="#charts-nav" data-bs-toggle="collapse" href="#">
-          <i class="bi bi-bar-chart"></i><span>Charts</span><i class="bi bi-chevron-down ms-auto"></i>
-        </a>
-        <ul id="charts-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
-          <li>
-            <a href="charts-chartjs.html">
-              <i class="bi bi-circle"></i><span>Chart.js</span>
-            </a>
-          </li>
-          <li>
-            <a href="charts-apexcharts.html">
-              <i class="bi bi-circle"></i><span>ApexCharts</span>
-            </a>
-          </li>
-          <li>
-            <a href="charts-echarts.html">
-              <i class="bi bi-circle"></i><span>ECharts</span>
-            </a>
-          </li>
-        </ul>
-      </li><!-- End Charts Nav -->
-
-      <li class="nav-item">
-        <a class="nav-link collapsed" data-bs-target="#icons-nav" data-bs-toggle="collapse" href="#">
-          <i class="bi bi-gem"></i><span>Icons</span><i class="bi bi-chevron-down ms-auto"></i>
-        </a>
-        <ul id="icons-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
-          <li>
-            <a href="icons-bootstrap.html">
-              <i class="bi bi-circle"></i><span>Bootstrap Icons</span>
-            </a>
-          </li>
-          <li>
-            <a href="icons-remix.html">
-              <i class="bi bi-circle"></i><span>Remix Icons</span>
-            </a>
-          </li>
-          <li>
-            <a href="icons-boxicons.html">
-              <i class="bi bi-circle"></i><span>Boxicons</span>
-            </a>
-          </li>
-        </ul>
-      </li><!-- End Icons Nav -->
-
-      <li class="nav-heading">Pages</li>
-
-      <li class="nav-item">
-        <a class="nav-link collapsed" href="users-profile.html">
-          <i class="bi bi-person"></i>
-          <span>Profile</span>
-        </a>
-      </li><!-- End Profile Page Nav -->
-
-      <li class="nav-item">
-        <a class="nav-link collapsed" href="pages-faq.html">
-          <i class="bi bi-question-circle"></i>
-          <span>F.A.Q</span>
-        </a>
-      </li><!-- End F.A.Q Page Nav -->
-
-      <li class="nav-item">
-        <a class="nav-link collapsed" href="pages-contact.html">
-          <i class="bi bi-envelope"></i>
-          <span>Contact</span>
-        </a>
-      </li><!-- End Contact Page Nav -->
-
-      <li class="nav-item">
-        <a class="nav-link collapsed" href="pages-register.html">
-          <i class="bi bi-card-list"></i>
-          <span>Register</span>
-        </a>
-      </li><!-- End Register Page Nav -->
-
-      <li class="nav-item">
-        <a class="nav-link collapsed" href="pages-login.html">
-          <i class="bi bi-box-arrow-in-right"></i>
-          <span>Login</span>
-        </a>
-      </li><!-- End Login Page Nav -->
-
-      <li class="nav-item">
-        <a class="nav-link collapsed" href="pages-error-404.html">
-          <i class="bi bi-dash-circle"></i>
-          <span>Error 404</span>
-        </a>
-      </li><!-- End Error 404 Page Nav -->
-
-      <li class="nav-item">
-        <a class="nav-link collapsed" href="pages-blank.html">
-          <i class="bi bi-file-earmark"></i>
-          <span>Blank</span>
-        </a>
-      </li><!-- End Blank Page Nav -->
-
     </ul>
-
   </aside><!-- End Sidebar-->
 
   <main id="main" class="main">
@@ -530,123 +157,74 @@
             <!-- Sales Card -->
             <div class="col-xxl-4 col-md-6">
               <div class="card info-card sales-card">
-
-                <div class="filter">
-                  <a class="icon" href="#" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></a>
-                  <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
-                    <li class="dropdown-header text-start">
-                      <h6>Filter</h6>
-                    </li>
-
-                    <li><a class="dropdown-item" href="#">Today</a></li>
-                    <li><a class="dropdown-item" href="#">This Month</a></li>
-                    <li><a class="dropdown-item" href="#">This Year</a></li>
-                  </ul>
-                </div>
-
                 <div class="card-body">
-                  <h5 class="card-title">국내확진자 <span>| Today</span></h5>
 
-                  <div class="d-flex align-items-center">
-                    <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
-                      <i class="bi bi-cart"></i>
-                    </div>
+                  <h5 class="card-title"><center>누적 확진자</center></h5>
+
                     {% if posts %}
                     {% for post in posts %}
                     {% if post.gubun == "합계" %}
                     <div class="ps-3">
-                      <h6>{{ post.defcnt|intcomma }}</h6>
-                      <span class="text-success small pt-1 fw-bold">12%</span> <span class="text-muted small pt-2 ps-1">increase</span>
-
+                      <h6>
+                        <center>{{ post.defcnt|intcomma }}명</center>
+                        </h6>
+                      <h7>
+                      <span style="color: red;"><center>{{ post.incdec|intcomma }}  <i class="bi bi-person-plus-fill"></i></center></span>
+                      </h7>
+                      <span class="text-success small pt-1 fw-bold"></span> <span class="text-muted small pt-2 ps-1"></span>
                     </div>
                     {% endif %}
                     {% endfor %}
                     {% endif %}
-                  </div>
+
                 </div>
-
               </div>
-
             </div><!-- End Sales Card -->
 
             <!-- Revenue Card -->
             <div class="col-xxl-4 col-md-6">
-              <div class="card info-card revenue-card">
-
-                <div class="filter">
-                  <a class="icon" href="#" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></a>
-                  <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
-                    <li class="dropdown-header text-start">
-                      <h6>Filter</h6>
-                    </li>
-
-                    <li><a class="dropdown-item" href="#">Today</a></li>
-                    <li><a class="dropdown-item" href="#">This Month</a></li>
-                    <li><a class="dropdown-item" href="#">This Year</a></li>
-                  </ul>
-                </div>
-
+              <div class="card info-card sales-card">
                 <div class="card-body">
-                  <h5 class="card-title">사망자 <span>| This Month</span></h5>
+                  <h5 class="card-title"><center>사망자</center></h5>
 
-                  <div class="d-flex align-items-center">
-                    <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
-                      <i class="bi bi-currency-dollar"></i>
-                    </div>
-                    <div class="ps-3">
-                      <h6>$3,264</h6>
-                      <span class="text-success small pt-1 fw-bold">8%</span> <span class="text-muted small pt-2 ps-1">increase</span>
-
-                    </div>
-                  </div>
-                </div>
-
-              </div>
-            </div><!-- End Revenue Card -->
-
-            <!-- Customers Card -->
-            <div class="col-xxl-4 col-xl-12">
-
-              <div class="card info-card customers-card">
-
-                <div class="filter">
-                  <a class="icon" href="#" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></a>
-                  <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
-                    <li class="dropdown-header text-start">
-                      <h6>Filter</h6>
-                    </li>
-
-                    <li><a class="dropdown-item" href="#">Today</a></li>
-                    <li><a class="dropdown-item" href="#">This Month</a></li>
-                    <li><a class="dropdown-item" href="#">This Year</a></li>
-                  </ul>
-                </div>
-
-                <div class="card-body">
-                  <h5 class="card-title">오늘확진자 <span>| This Year</span></h5>
-
-                  <div class="d-flex align-items-center">
-                    <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
-                      <i class="bi bi-people"></i>
-                    </div>
-                    <div class="ps-3">
                     {% if posts %}
                     {% for post in posts %}
                     {% if post.gubun == "합계" %}
                     <div class="ps-3">
-                      <h6>{{ post.localocccnt|intcomma }}</h6>
+                      <h6>
+                        <center>{{ post.deathcnt|intcomma }}명</center>
+                      </h6>
+                      <span class="text-success small pt-1 fw-bold"></span> <span class="text-muted small pt-2 ps-1"></span>
                     </div>
                     {% endif %}
                     {% endfor %}
                     {% endif %}
-                      <span class="text-danger small pt-1 fw-bold">12%</span> <span class="text-muted small pt-2 ps-1">decrease</span>
-
-                    </div>
-                  </div>
 
                 </div>
               </div>
+            </div><!-- End Revenue Card -->
 
+            <!-- Customers Card -->
+            <div class="col-xxl-4 col-md-6">
+              <div class="card info-card sales-card">
+                <div class="card-body">
+                  <h5 class="card-title"><center>오늘 확진자</center></h5>
+
+                    {% if posts %}
+                    {% for post in posts %}
+                    {% if post.gubun == "합계" %}
+                    <div class="ps-3">
+                      <h6>
+                        <span style="color: red;"><center>{{ post.localocccnt|intcomma}}명</center></span>
+                      </h6>
+                      <span class="text-success small pt-1 fw-bold"></span> <span class="text-muted small pt-2 ps-1"></span>
+                    </div>
+                    {% endif %}
+                    {% endfor %}
+                    {% endif %}
+
+                </div>
+              </div>
             </div><!-- End Customers Card -->
 
             <!-- Reports -->
@@ -666,105 +244,258 @@
                   </ul>
                 </div>
 
+
                 <div class="card-body">
-                  <h5 class="card-title">리스트/지도 <span>/Today</span></h5>
 
-                  <!-- Line Chart -->
-<script type='text/javascript' src='http://www.google.com/jsapi'></script>
-<script type='text/javascript'>google.load('visualization', '1', {'packages': ['geochart']});
-google.setOnLoadCallback(drawVisualization);
+                  <h5 class="card-title"><span></span></h5>
 
-function drawVisualization() {
-	var data = new google.visualization.DataTable();
+              <!-- Pills Tabs -->
+              <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+                <li class="nav-item" role="presentation">
+                  <button class="nav-link active" id="pills-home-tab" data-bs-toggle="pill" data-bs-target="#pills-home" type="button" role="tab" aria-controls="pills-home" aria-selected="true"><i class="bi bi-map"></i> 지도</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                  <button class="nav-link" id="pills-profile-tab" data-bs-toggle="pill" data-bs-target="#pills-profile" type="button" role="tab" aria-controls="pills-profile" aria-selected="false"><i class="bi bi-list-ul"></i> 리스트</button>
+              </ul>
+              <div class="tab-content pt-2" id="myTabContent">
+                <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="home-tab">
+                                    <!-- Line Chart -->
+                  <script type='text/javascript' src='http://www.google.com/jsapi'></script>
+                  <script type='text/javascript'>google.load('visualization', '1', {'packages': ['geochart']});
+                  google.setOnLoadCallback(drawVisualization);
 
-	data.addColumn('string', 'Country');
-	data.addColumn('number', 'Value');
-	data.addColumn({type:'string', role:'tooltip'});var ivalue = new Array();
+                  function drawVisualization() {
+                      var data = new google.visualization.DataTable();
 
-	data.addRows([[{v:'KR-11', f:'Seoul Teugbyeolsi'},0,'Click to change background color']]);
+                      data.addColumn('string', 'Country');
+                      data.addColumn('number', 'Value');
+                      data.addColumn({type:'string', role:'tooltip'});var ivalue = new Array();
+
+                      {% if posts %}
+                      {% for post in posts %}
+                      {% if post.gubun == "서울" %}
+                      data.addRows([[{v:'KR-11', f:'서울특별시'},{{post.localocccnt}},'{{ post.localocccnt|intcomma }}']]);
+	                  ivalue['KR-11'] = '#3182BD';
+                      {% endif %}
+                      {% endfor %}
+                      {% endif %}
+
+                      {% if posts %}
+                      {% for post in posts %}
+                      {% if post.gubun == "부산" %}
+                      data.addRows([[{v:'KR-26', f:'부산광역시'},{{post.localocccnt}},'{{ post.localocccnt|intcomma }}']]);
+                      ivalue['KR-26'] = '#3182BD';
+                      {% endif %}
+                      {% endfor %}
+                      {% endif %}
+
+                      {% if posts %}
+                      {% for post in posts %}
+                      {% if post.gubun == "대구" %}
+                      data.addRows([[{v:'KR-27',f:'대구광역시'},{{post.localocccnt}},'{{ post.localocccnt|intcomma }}']]);
+                      ivalue['KR-27'] = '#3182BD';
+                      {% endif %}
+                      {% endfor %}
+                      {% endif %}
+
+                      {% if posts %}
+                      {% for post in posts %}
+                      {% if post.gubun == "대전" %}
+                      data.addRows([[{v:'KR-30',f:'대전광역시'},{{post.localocccnt}},'{{ post.localocccnt|intcomma }}']]);
+                      ivalue['KR-30'] = '#3182BD';
+                      {% endif %}
+                      {% endfor %}
+                      {% endif %}
+
+                      {% if posts %}
+                      {% for post in posts %}
+                      {% if post.gubun == "광주" %}
+                      data.addRows([[{v:'KR-29',f:'광주광역시'},{{post.localocccnt}},'{{ post.localocccnt|intcomma }}']]);
+                      ivalue['KR-29'] = '#3182BD';
+                      {% endif %}
+                      {% endfor %}
+                      {% endif %}
+
+                      {% if posts %}
+                      {% for post in posts %}
+                      {% if post.gubun == "인천" %}
+                      data.addRows([[{v:'KR-28',f:'인천광역시'},{{post.localocccnt}},'{{ post.localocccnt|intcomma }}']]);
+                      ivalue['KR-28'] = '#3182BD';
+                      {% endif %}
+                      {% endfor %}
+                      {% endif %}
+
+                      {% if posts %}
+                      {% for post in posts %}
+                      {% if post.gubun == "울산" %}
+                      data.addRows([[{v:'KR-31',f:'울산광역시'},{{post.localocccnt}},'{{ post.localocccnt|intcomma }}']]);
+                      ivalue['KR-31'] = '#3182BD';
+                      {% endif %}
+                      {% endfor %}
+                      {% endif %}
+
+                      {% if posts %}
+                      {% for post in posts %}
+                      {% if post.gubun == "충북" %}
+                      data.addRows([[{v:'KR-43',f:'충청북도'},{{post.localocccnt}},'{{ post.localocccnt|intcomma }}']]);
+                      ivalue['KR-43'] = '#3182BD';
+                      {% endif %}
+                      {% endfor %}
+                      {% endif %}
+
+                      {% if posts %}
+                      {% for post in posts %}
+                      {% if post.gubun == "충남" %}
+                      data.addRows([[{v:'KR-44',f:'충청남도'},{{post.localocccnt}},'{{ post.localocccnt|intcomma }}']]);
+                      ivalue['KR-44'] = '#3182BD';
+                      {% endif %}
+                      {% endfor %}
+                      {% endif %}
+
+                      {% if posts %}
+                      {% for post in posts %}
+                      {% if post.gubun == "강원" %}
+                      data.addRows([[{v:'KR-42',f:'강원도'},{{post.localocccnt}},'{{ post.localocccnt|intcomma }}']]);
+                      ivalue['KR-42'] = '#9ECAE1';
+                      {% endif %}
+                      {% endfor %}
+                      {% endif %}
+
+                      {% if posts %}
+                      {% for post in posts %}
+                      {% if post.gubun == "경기" %}
+                      data.addRows([[{v:'KR-41',f:'경기도'},{{post.localocccnt}},'{{ post.localocccnt|intcomma }}']]);
+                      ivalue['KR-41'] = '#9ECAE1';
+                      {% endif %}
+                      {% endfor %}
+                      {% endif %}
+
+                      {% if posts %}
+                      {% for post in posts %}
+                      {% if post.gubun == "경북" %}
+                      data.addRows([[{v:'KR-47',f:'경상북도'},{{post.localocccnt}},'{{ post.localocccnt|intcomma }}']]);
+                      ivalue['KR-47'] = '#9ECAE1';
+                      {% endif %}
+                      {% endfor %}
+                      {% endif %}
+
+                      {% if posts %}
+                      {% for post in posts %}
+                      {% if post.gubun == "경남" %}
+                      data.addRows([[{v:'KR-48',f:'경상남도'},{{post.localocccnt}},'{{ post.localocccnt|intcomma }}']]);
+                      ivalue['KR-48'] = '#9ECAE1';
+                      {% endif %}
+                      {% endfor %}
+                      {% endif %}
+
+                      {% if posts %}
+                      {% for post in posts %}
+                      {% if post.gubun == "제주" %}
+                      data.addRows([[{v:'KR-49',f:'제주도'},{{post.localocccnt}},'{{ post.localocccnt|intcomma }}']]);
+                      ivalue['KR-49'] = '#9ECAE1';
+                      {% endif %}
+                      {% endfor %}
+                      {% endif %}
+
+                      {% if posts %}
+                      {% for post in posts %}
+                      {% if post.gubun == "전북" %}
+                      data.addRows([[{v:'KR-45',f:'전라북도'},{{post.localocccnt}},'{{ post.localocccnt|intcomma }}']]);
+                      ivalue['KR-45'] = '#9ECAE1';
+                      {% endif %}
+                      {% endfor %}
+                      {% endif %}
+
+                      {% if posts %}
+                      {% for post in posts %}
+                      {% if post.gubun == "전남" %}
+                      data.addRows([[{v:'KR-46',f:'전라남도'},{{post.localocccnt}},'{{ post.localocccnt|intcomma }}']]);
+                      ivalue['KR-46'] = '#9ECAE1';
+                      {% endif %}
+                      {% endfor %}
+                      {% endif %}
+
+                      var options = {
+                          backgroundColor: {fill:'#FFFFFF',stroke:'#FFFFFF' ,strokeWidth:0 },
+                          colorAxis: {colors: ['#e7711c', '#4374e0']},
+                          legend: 'none',
+                          backgroundColor: {fill:'#FFFFFF',stroke:'#FFFFFF' ,strokeWidth:0 },
+                          datalessRegionColor: '#f5f5f5',
+                          displayMode: 'regions',
+                          enableRegionInteractivity: 'true',
+                          resolution: 'provinces',
+                          sizeAxis: {minValue: 1, maxValue:1,minSize:10,  maxSize: 10},
+                          region:'KR', //country code
+                          keepAspectRatio: true,
+                          width:600,
+                          height:400,
+                          tooltip: {textStyle: {color: '#444444'}, trigger:'focus'}
+                      };
+
+                      var chart = new google.visualization.GeoChart(document.getElementById('visualization'));
+                      google.visualization.events.addListener(chart, 'select', function() {
+                          var selection = chart.getSelection();
+                          if (selection.length == 1) {
+                              var selectedRow = selection[0].row;
+                              var selectedRegion = data.getValue(selectedRow, 0);
+                              if(ivalue[selectedRegion] != '') {
+                              window.open(ivalue[selectedRegion]);
+                              }
+                          }
+                      });
+                      chart.draw(data, options);
+                  }
+                   </script>
+                   <div id='visualization'></div>
+                </div>
+                <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="profile-tab">
 
 
-	data.addRows([[{v:'KR-26', f:'Busan Gwang\'yeogsi'},1,'Click to change background color']]);
-	ivalue['KR-26'] = '#3182BD';
 
-	data.addRows([[{v:'KR-27',f:'Daegu Gwang\'yeogsi'},2,'Click to change background color']]);
-	ivalue['KR-27'] = '#3182BD';
+            <div class="card-body">
+              <h5 class="card-title"> </h5>
 
-	data.addRows([[{v:'KR-30',f:'Daejeon Gwang\'yeogsi'},3,'Click to change background color']]);
-	ivalue['KR-30'] = '#3182BD';
+              <!-- Table with stripped rows -->
 
-	data.addRows([[{v:'KR-29',f:'Gwangju Gwang\'yeogs'},4,'Click to change background color']]);
-	ivalue['KR-29'] = '#3182BD';
+              <table class="table table-striped">
+                <thead>
+                  <tr>
+                    <th scope="col">지역</th>
+                    <th scope="col">오늘 확진자</th>
+                    <th scope="col">누적 확진자</th>
+                    <th scope="col">누적 사망자</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {% if posts %}
+                  {% for post in posts %}
+                  <tr>
+                    <th scope="row">{{ post.gubun|intcomma }}</th>
+                    <td>{{ post.localocccnt|intcomma }}</td>
+                    <td>{{ post.defcnt|intcomma }}</td>
+                    <td>{{ post.deathcnt|intcomma }}</td>
 
-	data.addRows([[{v:'KR-28',f:'Incheon Gwang\'yeogsi'},5,'Click to change background color']]);
-	ivalue['KR-28'] = '#3182BD';
+                  </tr>
+                  {% endfor %}
+                  {% endif %}
+                </tbody>
+              </table>
 
-	data.addRows([[{v:'KR-31',f:'Ulsan Gwang\'yeogsi'},6,'Click to change background color']]);
-	ivalue['KR-31'] = '#3182BD';
+              <!-- End Table with stripped rows -->
 
-	data.addRows([[{v:'KR-43',f:'Chungcheongbugdo'},7,'Click to change background color']]);
-	ivalue['KR-43'] = '#3182BD';
+            </div>
+          </div>
+         </div>
+        </div><!-- End Pills Tabs -->
 
-	data.addRows([[{v:'KR-44',f:'Chungcheongnamdo'},8,'Click to change background color']]);
-	ivalue['KR-44'] = '#3182BD';
+              </div>
+</div>
 
-	data.addRows([[{v:'KR-42',f:'Gang\'weondo'},9,'Click to change background color']]);
-	ivalue['KR-42'] = '#9ECAE1';
-    {% if posts %}
-    {% for post in posts %}
-    {% if post.gubun == "경기" %}
-	data.addRows([[{v:'KR-41',f:'경기도'},10,'오늘 확진자 {{ post.defcnt|intcomma }}']]);
-    {% endif %}
-    {% endfor %}
-    {% endif %}
 
-	data.addRows([[{v:'KR-47',f:'Gyeongsangbugdo'},11,'Click to change background color']]);
-	ivalue['KR-47'] = '#9ECAE1';
 
-	data.addRows([[{v:'KR-48',f:'Gyeongsangnamdo'},12,'Click to change background color']]);
-	ivalue['KR-48'] = '#9ECAE1';
 
-	data.addRows([[{v:'KR-49',f:'Jejudo'},13,'Click to change background color']]);
-	ivalue['KR-49'] = '#9ECAE1';
 
-	data.addRows([[{v:'KR-45',f:'Jeonrabugdo'},14,'Click to change background color']]);
-	ivalue['KR-45'] = '#9ECAE1';
 
-	data.addRows([[{v:'KR-46',f:'Jeonranamdo'},15,'Click to change background color']]);
-	ivalue['KR-46'] = '#9ECAE1';
-
-	var options = {
-		backgroundColor: {fill:'#FFFFFF',stroke:'#FFFFFF' ,strokeWidth:0 },
-		colorAxis:  {minValue: 0, maxValue: 21,  colors: ['#3182BD','#3182BD','#3182BD','#3182BD','#3182BD','#3182BD','#3182BD','#3182BD','#3182BD','#9ECAE1','#9ECAE1','#9ECAE1','#9ECAE1','#9ECAE1','#9ECAE1','#9ECAE1','#9ECAE1','#DEEBF7','#DEEBF7','#DEEBF7','#DEEBF7','#DEEBF7',]},
-		legend: 'none',
-		backgroundColor: {fill:'#FFFFFF',stroke:'#FFFFFF' ,strokeWidth:0 },
-		datalessRegionColor: '#f5f5f5',
-		displayMode: 'regions',
-		enableRegionInteractivity: 'true',
-		resolution: 'provinces',
-		sizeAxis: {minValue: 1, maxValue:1,minSize:10,  maxSize: 10},
-		region:'KR', //country code
-		keepAspectRatio: true,
-		width:600,
-		height:400,
-		tooltip: {textStyle: {color: '#444444'}, trigger:'focus'}
-	};
-
-	var chart = new google.visualization.GeoChart(document.getElementById('visualization'));
-	google.visualization.events.addListener(chart, 'select', function() {
-	 	var selection = chart.getSelection();
-	 	if (selection.length == 1) {
-	 		var selectedRow = selection[0].row;
-	 		var selectedRegion = data.getValue(selectedRow, 0);
-	 		if(ivalue[selectedRegion] != '') {
-	 			document.getElementsByTagName('body')[0].style.background=ivalue[selectedRegion];
-	 		}
-	 	}
-	});
-	chart.draw(data, options);
-}
- </script>
- <div id='visualization'></div>
                 </div><!-- End Reports -->
 
             <!-- Recent Sales -->
@@ -784,143 +515,256 @@ function drawVisualization() {
                   </ul>
                 </div>
 
+                  <!-- Styles -->
                 <div class="card-body">
-                  <h5 class="card-title">Recent Sales <span>| Today</span></h5>
+                  <h5 class="card-title">Reports <span>/Today</span></h5>
+                  <!-- Line Chart -->
+                  <div id="reportsChart"></div>
 
-                  <table class="table table-borderless datatable">
-                    <thead>
-                      <tr>
-                        <th scope="col">#</th>
-                        <th scope="col">Customer</th>
-                        <th scope="col">Product</th>
-                        <th scope="col">Price</th>
-                        <th scope="col">Status</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr>
-                        <th scope="row"><a href="#">#2457</a></th>
-                        <td>Brandon Jacob</td>
-                        <td><a href="#" class="text-primary">At praesentium minu</a></td>
-                        <td>$64</td>
-                        <td><span class="badge bg-success">Approved</span></td>
-                      </tr>
-                      <tr>
-                        <th scope="row"><a href="#">#2147</a></th>
-                        <td>Bridie Kessler</td>
-                        <td><a href="#" class="text-primary">Blanditiis dolor omnis similique</a></td>
-                        <td>$47</td>
-                        <td><span class="badge bg-warning">Pending</span></td>
-                      </tr>
-                      <tr>
-                        <th scope="row"><a href="#">#2049</a></th>
-                        <td>Ashleigh Langosh</td>
-                        <td><a href="#" class="text-primary">At recusandae consectetur</a></td>
-                        <td>$147</td>
-                        <td><span class="badge bg-success">Approved</span></td>
-                      </tr>
-                      <tr>
-                        <th scope="row"><a href="#">#2644</a></th>
-                        <td>Angus Grady</td>
-                        <td><a href="#" class="text-primar">Ut voluptatem id earum et</a></td>
-                        <td>$67</td>
-                        <td><span class="badge bg-danger">Rejected</span></td>
-                      </tr>
-                      <tr>
-                        <th scope="row"><a href="#">#2644</a></th>
-                        <td>Raheem Lehner</td>
-                        <td><a href="#" class="text-primary">Sunt similique distinctio</a></td>
-                        <td>$165</td>
-                        <td><span class="badge bg-success">Approved</span></td>
-                      </tr>
-                    </tbody>
-                  </table>
+                  <!-- Styles -->
+                      <style>
+                      #chartdiv {
+                        width: 100%;
+                        height: 500px;
+                      }
+                      </style>
 
+                      <!-- Resources -->
+                      <script src="https://cdn.amcharts.com/lib/5/index.js"></script>
+                      <script src="https://cdn.amcharts.com/lib/5/xy.js"></script>
+                      <script src="https://cdn.amcharts.com/lib/5/themes/Animated.js"></script>
+
+                      <!-- Chart code -->
+                      <script>
+                      am5.ready(function() {
+
+                      // Create root element
+                      // https://www.amcharts.com/docs/v5/getting-started/#Root_element
+                      var root = am5.Root.new("chartdiv");
+
+                      // Set themes
+                      // https://www.amcharts.com/docs/v5/concepts/themes/
+                      root.setThemes([
+                        am5themes_Animated.new(root)
+                      ]);
+
+                      root.dateFormatter.setAll({
+                        dateFormat: "yyyy-MM-dd",
+                        dateFields: ["valueX"]
+                      });
+                      {% if g_posts %}
+                      var data = [
+
+                      {% for post in g_posts %}
+                        {
+                          date: "{{ post.stdday|date:'Y-m-d' }}",
+                          steps: {{ post.localocccnt }}
+                        },
+                      {% endfor %}
+                      ];
+                      {% endif %}
+                      // Create chart
+                      // https://www.amcharts.com/docs/v5/charts/xy-chart/
+                      var chart = root.container.children.push(
+                        am5xy.XYChart.new(root, {
+                          focusable: true,
+                          panX: true,
+                          panY: false,
+                          wheelX: "panX",
+                          wheelY: "none"
+                        })
+                      );
+
+                      var easing = am5.ease.linear;
+
+                      // hide zoomout button
+                      chart.zoomOutButton.set("forceHidden", true);
+
+                      // add label
+                      chart.plotContainer.children.push(
+                        am5.Label.new(root, { text: "일일확진자 그래프", x: 100, y: 50 })
+                      );
+
+                      // Create axes
+                      // https://www.amcharts.com/docs/v5/charts/xy-chart/axes/
+                      var xRenderer = am5xy.AxisRendererX.new(root, {
+                        minGridDistance: 50,
+                        strokeOpacity: 0.2
+                      });
+                      xRenderer.grid.template.set("forceHidden", true);
+
+                      var xAxis = chart.xAxes.push(
+                        am5xy.DateAxis.new(root, {
+                          maxDeviation: 0.49,
+                          snapTooltip: false,
+                          baseInterval: {
+                            timeUnit: "day",
+                            count: 1
+                          },
+                          renderer: xRenderer,
+                          tooltip: am5.Tooltip.new(root, {})
+                        })
+                      );
+
+                      var yRenderer = am5xy.AxisRendererY.new(root, { inside: true });
+                      yRenderer.grid.template.set("forceHidden", true);
+
+                      var yAxis = chart.yAxes.push(
+                        am5xy.ValueAxis.new(root, {
+                          maxDeviation: 0,
+                          renderer: yRenderer
+                        })
+                      );
+
+                      // Add series
+                      // https://www.amcharts.com/docs/v5/charts/xy-chart/series/
+                      var series = chart.series.push(
+                        am5xy.ColumnSeries.new(root, {
+                          xAxis: xAxis,
+                          yAxis: yAxis,
+                          valueYField: "steps",
+                          valueXField: "date",
+                          tooltip: am5.Tooltip.new(root, {
+                            pointerOrientation: "vertical",
+                            labelText: "{valueY}"
+                          })
+                        })
+                      );
+
+                      series.columns.template.setAll({
+                        cornerRadiusTL: 15,
+                        cornerRadiusTR: 15,
+                        maxWidth: 30,
+                        strokeOpacity: 0
+                      });
+
+                      series.columns.template.adapters.add("fill", function (fill, target) {
+                        if (target.dataItem.get("valueY") < 6000) {
+                          return am5.color(0xdadada);
+                        }
+                        return fill;
+                      });
+
+                      // Set up data processor to parse string dates
+                      // https://www.amcharts.com/docs/v5/concepts/data/#Pre_processing_data
+                      series.data.processor = am5.DataProcessor.new(root, {
+                        dateFormat: "yyyy-MM-dd",
+                        dateFields: ["date"]
+                      });
+
+                      series.data.setAll(data);
+
+                      // do not allow tooltip  to move horizontally
+                      series.get("tooltip").adapters.add("x", function (x) {
+                        return chart.plotContainer.toGlobal({
+                          x: chart.plotContainer.width() / 2,
+                          y: 0
+                        }).x;
+                      });
+
+                      // add ranges
+                      var goalRange = yAxis.createAxisRange(yAxis.makeDataItem({
+                        value: 6000
+                      }));
+
+                      goalRange.get("grid").setAll({
+                        forceHidden: false,
+                        strokeOpacity: 0.2
+                      });
+
+                      var goalLabel = goalRange.get("label");
+
+                      goalLabel.setAll({
+                        centerY: am5.p100,
+                        centerX: am5.p100,
+                        text: "Goal"
+                      });
+
+                      // put to other side
+                      goalLabel.adapters.add("x", function (x) {
+                        return chart.plotContainer.width();
+                      });
+
+                      var goalRange2 = yAxis.createAxisRange(yAxis.makeDataItem({
+                        value: 12000
+                      }));
+
+                      goalRange2.get("grid").setAll({
+                        forceHidden: false,
+                        strokeOpacity: 0.2
+                      });
+
+                      var goalLabel2 = goalRange2.get("label");
+
+                      goalLabel2.setAll({
+                        centerY: am5.p100,
+                        centerX: am5.p100,
+                        text: "2 x Goal"
+                      });
+
+                      // put to other side
+                      goalLabel2.adapters.add("x", function (x) {
+                        return chart.plotContainer.width();
+                      });
+
+                      // reposition when width changes
+                      chart.plotContainer.onPrivate("width", function () {
+                        goalLabel.markDirtyPosition();
+                        goalLabel2.markDirtyPosition();
+                      });
+
+                      // Add cursor
+                      // https://www.amcharts.com/docs/v5/charts/xy-chart/cursor/
+                      var cursor = chart.set("cursor", am5xy.XYCursor.new(root, {
+                        alwaysShow: true,
+                        behavior: "none",
+                        positionX: 0.5 // make it always be at the center
+                      }));
+                      cursor.lineY.set("visible", false);
+
+                      // zoom to last 11 days
+                      series.events.on("datavalidated", function () {
+                        var toTime =
+                          series.dataItems[series.dataItems.length - 1].get("valueX") +
+                          am5.time.getDuration("day", 1);
+                        var fromTime = series.dataItems[series.dataItems.length - 11].get("valueX");
+
+                        xAxis.zoomToValues(fromTime, toTime);
+                      });
+
+                      // when plot are is released, round zoom to nearest days
+                      chart.plotContainer.events.on("globalpointerup", function () {
+                        var dayDuration = am5.time.getDuration("day", 1);
+
+                        var firstTime = am5.time
+                          .round(new Date(series.dataItems[0].get("valueX")), "day", 1)
+                          .getTime();
+                        var lastTime =
+                          series.dataItems[series.dataItems.length - 1].get("valueX") + dayDuration;
+                        var totalTime = lastTime - firstTime;
+                        var days = totalTime / dayDuration;
+
+                        var roundedStart =
+                          firstTime + Math.round(days * xAxis.get("start")) * dayDuration;
+                        var roundedEnd =
+                          firstTime + Math.round(days * xAxis.get("end")) * dayDuration;
+
+                        xAxis.zoomToValues(roundedStart, roundedEnd);
+                      });
+
+                      // Make stuff animate on load
+                      // https://www.amcharts.com/docs/v5/concepts/animations/
+                      chart.appear(1000, 50);
+
+                      }); // end am5.ready()
+                      </script>
+<!-- HTML -->
+<div id="chartdiv"></div>
                 </div>
-
               </div>
-            </div><!-- End Recent Sales -->
+            </div>
 
-            <!-- Top Selling -->
-            <div class="col-12">
-              <div class="card top-selling overflow-auto">
-
-                <div class="filter">
-                  <a class="icon" href="#" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></a>
-                  <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
-                    <li class="dropdown-header text-start">
-                      <h6>Filter</h6>
-                    </li>
-
-                    <li><a class="dropdown-item" href="#">Today</a></li>
-                    <li><a class="dropdown-item" href="#">This Month</a></li>
-                    <li><a class="dropdown-item" href="#">This Year</a></li>
-                  </ul>
-                </div>
-
-                <div class="card-body pb-0">
-                  <h5 class="card-title">Top Selling <span>| Today</span></h5>
-
-                  <table class="table table-borderless">
-                    <thead>
-                      <tr>
-                        <th scope="col">Preview</th>
-                        <th scope="col">Product</th>
-                        <th scope="col">Price</th>
-                        <th scope="col">Sold</th>
-                        <th scope="col">Revenue</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr>
-                        <th scope="row"><a href="#"><img src="assets/img/product-1.jpg" alt=""></a></th>
-                        <td><a href="#" class="text-primary fw-bold">Ut inventore ipsa voluptas nulla</a></td>
-                        <td>$64</td>
-                        <td class="fw-bold">124</td>
-                        <td>$5,828</td>
-                      </tr>
-                      <tr>
-                        <th scope="row"><a href="#"><img src="assets/img/product-2.jpg" alt=""></a></th>
-                        <td><a href="#" class="text-primary fw-bold">Exercitationem similique doloremque</a></td>
-                        <td>$46</td>
-                        <td class="fw-bold">98</td>
-                        <td>$4,508</td>
-                      </tr>
-                      <tr>
-                        <th scope="row"><a href="#"><img src="assets/img/product-3.jpg" alt=""></a></th>
-                        <td><a href="#" class="text-primary fw-bold">Doloribus nisi exercitationem</a></td>
-                        <td>$59</td>
-                        <td class="fw-bold">74</td>
-                        <td>$4,366</td>
-                      </tr>
-                      <tr>
-                        <th scope="row"><a href="#"><img src="assets/img/product-4.jpg" alt=""></a></th>
-                        <td><a href="#" class="text-primary fw-bold">Officiis quaerat sint rerum error</a></td>
-                        <td>$32</td>
-                        <td class="fw-bold">63</td>
-                        <td>$2,016</td>
-                      </tr>
-                      <tr>
-                        <th scope="row"><a href="#"><img src="assets/img/product-5.jpg" alt=""></a></th>
-                        <td><a href="#" class="text-primary fw-bold">Sit unde debitis delectus repellendus</a></td>
-                        <td>$79</td>
-                        <td class="fw-bold">41</td>
-                        <td>$3,239</td>
-                      </tr>
-                    </tbody>
-                  </table>
-
-                </div>
-
-              </div>
-            </div><!-- End Top Selling -->
-
-          </div>
-        </div><!-- End Left side columns -->
-
-
-      </div>
-    </section>
+     </section>
 
   </main><!-- End #main -->
 
@@ -941,17 +785,17 @@ function drawVisualization() {
   <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 
   <!-- Vendor JS Files -->
-  <script src="assets/vendor/apexcharts/apexcharts.min.js"></script>
-  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="assets/vendor/chart.js/chart.min.js"></script>
-  <script src="assets/vendor/echarts/echarts.min.js"></script>
-  <script src="assets/vendor/quill/quill.min.js"></script>
-  <script src="assets/vendor/simple-datatables/simple-datatables.js"></script>
-  <script src="assets/vendor/tinymce/tinymce.min.js"></script>
-  <script src="assets/vendor/php-email-form/validate.js"></script>
+  <script src="{% static 'assets/vendor/apexcharts/apexcharts.min.js' %}"></script>
+  <script src="{% static 'assets/vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+  <script src="{% static 'assets/vendor/chart.js/chart.min.js' %}"></script>
+  <script src="{% static 'assets/vendor/echarts/echarts.min.js' %}"></script>
+  <script src="{% static 'assets/vendor/quill/quill.min.js' %}"></script>
+  <script src="{% static 'assets/vendor/simple-datatables/simple-datatables.js' %}"></script>
+  <script src="{% static 'assets/vendor/tinymce/tinymce.min.js' %}"></script>
+  <script src="{% static 'assets/vendor/php-email-form/validate.js' %}"></script>
 
   <!-- Template Main JS File -->
-  <script src="assets/js/main.js"></script>
+  <script src="{% static 'assets/js/main.js' %}"></script>
 
 </body>
 
