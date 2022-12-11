@@ -1,8 +1,8 @@
 import json
-
+from django.views.decorators.csrf import csrf_exempt
 from django.http import JsonResponse
 from django.shortcuts import render
-
+from django.core import serializers
 from django.db.models import Q
 from board.models import Corona
 from datetime import datetime, timedelta
@@ -44,12 +44,14 @@ def read(request):
 
 
 def News_list(request):
-    posts = News.objects.all()
+    posts = News.objects.all().order_by('stdday')
     return render(request, 'board/news.html', {'posts': posts})
 
-def regions(request):
-    gubun=request.GET.get('gubun')
-    print(gubun)
-    context = {'gubun': gubun}
-    return JsonResponse(context)
 
+def regions(request):
+
+    get_data=request.GET.get('get_data')
+    ajax_posts = Corona.objects.filter()
+    ajax_posts = ajax_posts.filter(gubun__icontains= get_data)
+
+    return render(request, 'board/test.html', {'ajax_posts': ajax_posts})

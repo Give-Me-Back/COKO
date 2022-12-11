@@ -5,6 +5,7 @@
   {% load humanize %}
   {% load static %}
 
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
@@ -275,7 +276,7 @@
                       {% for post in posts %}
                       {% if post.gubun == "서울" %}
                       data.addRows([[{v:'KR-11', f:'서울특별시'},{{post.localocccnt}},'{{ post.localocccnt|intcomma }}']]);
-	                  ivalue['KR-11'] = '#3182BD';
+	                  ivalue['KR-11'] = "{{post.gubun}}";
                       {% endif %}
                       {% endfor %}
                       {% endif %}
@@ -284,7 +285,7 @@
                       {% for post in posts %}
                       {% if post.gubun == "부산" %}
                       data.addRows([[{v:'KR-26', f:'부산광역시'},{{post.localocccnt}},'{{ post.localocccnt|intcomma }}']]);
-                      ivalue['KR-26'] = '#3182BD';
+                      ivalue['KR-26'] = "{{post.gubun}}";
                       {% endif %}
                       {% endfor %}
                       {% endif %}
@@ -293,7 +294,7 @@
                       {% for post in posts %}
                       {% if post.gubun == "대구" %}
                       data.addRows([[{v:'KR-27',f:'대구광역시'},{{post.localocccnt}},'{{ post.localocccnt|intcomma }}']]);
-                      ivalue['KR-27'] = '#3182BD';
+                      ivalue['KR-27'] = "{{post.gubun}}";
                       {% endif %}
                       {% endfor %}
                       {% endif %}
@@ -302,7 +303,7 @@
                       {% for post in posts %}
                       {% if post.gubun == "대전" %}
                       data.addRows([[{v:'KR-30',f:'대전광역시'},{{post.localocccnt}},'{{ post.localocccnt|intcomma }}']]);
-                      ivalue['KR-30'] = '#3182BD';
+                      ivalue['KR-30'] = "{{post.gubun}}";
                       {% endif %}
                       {% endfor %}
                       {% endif %}
@@ -311,7 +312,7 @@
                       {% for post in posts %}
                       {% if post.gubun == "광주" %}
                       data.addRows([[{v:'KR-29',f:'광주광역시'},{{post.localocccnt}},'{{ post.localocccnt|intcomma }}']]);
-                      ivalue['KR-29'] = '#3182BD';
+                      ivalue['KR-29'] = "{{post.gubun}}";
                       {% endif %}
                       {% endfor %}
                       {% endif %}
@@ -320,7 +321,7 @@
                       {% for post in posts %}
                       {% if post.gubun == "인천" %}
                       data.addRows([[{v:'KR-28',f:'인천광역시'},{{post.localocccnt}},'{{ post.localocccnt|intcomma }}']]);
-                      ivalue['KR-28'] = '#3182BD';
+                      ivalue['KR-28'] = "{{post.gubun}}";
                       {% endif %}
                       {% endfor %}
                       {% endif %}
@@ -329,7 +330,7 @@
                       {% for post in posts %}
                       {% if post.gubun == "울산" %}
                       data.addRows([[{v:'KR-31',f:'울산광역시'},{{post.localocccnt}},'{{ post.localocccnt|intcomma }}']]);
-                      ivalue['KR-31'] = '#3182BD';
+                      ivalue['KR-31'] = "{{post.gubun}}";
                       {% endif %}
                       {% endfor %}
                       {% endif %}
@@ -338,7 +339,7 @@
                       {% for post in posts %}
                       {% if post.gubun == "충북" %}
                       data.addRows([[{v:'KR-43',f:'충청북도'},{{post.localocccnt}},'{{ post.localocccnt|intcomma }}']]);
-                      ivalue['KR-43'] = '#3182BD';
+                      ivalue['KR-43'] = "{{post.gubun}}";
                       {% endif %}
                       {% endfor %}
                       {% endif %}
@@ -347,7 +348,7 @@
                       {% for post in posts %}
                       {% if post.gubun == "충남" %}
                       data.addRows([[{v:'KR-44',f:'충청남도'},{{post.localocccnt}},'{{ post.localocccnt|intcomma }}']]);
-                      ivalue['KR-44'] = '#3182BD';
+                      ivalue['KR-44'] = "{{post.gubun}}";
                       {% endif %}
                       {% endfor %}
                       {% endif %}
@@ -356,7 +357,7 @@
                       {% for post in posts %}
                       {% if post.gubun == "강원" %}
                       data.addRows([[{v:'KR-42',f:'강원도'},{{post.localocccnt}},'{{ post.localocccnt|intcomma }}']]);
-                      ivalue['KR-42'] = '#9ECAE1';
+                      ivalue['KR-42'] = "{{post.gubun}}";
                       {% endif %}
                       {% endfor %}
                       {% endif %}
@@ -365,7 +366,7 @@
                       {% for post in posts %}
                       {% if post.gubun == "경기" %}
                       data.addRows([[{v:'KR-41',f:'경기도'},{{post.localocccnt}},'{{ post.localocccnt|intcomma }}']]);
-                      ivalue['KR-41'] = '#9ECAE1';
+                      ivalue['KR-41'] = "{{post.gubun}}";
                       {% endif %}
                       {% endfor %}
                       {% endif %}
@@ -374,7 +375,7 @@
                       {% for post in posts %}
                       {% if post.gubun == "경북" %}
                       data.addRows([[{v:'KR-47',f:'경상북도'},{{post.localocccnt}},'{{ post.localocccnt|intcomma }}']]);
-                      ivalue['KR-47'] = '#9ECAE1';
+                      ivalue['KR-47'] = "{{post.gubun}}";
                       {% endif %}
                       {% endfor %}
                       {% endif %}
@@ -383,7 +384,7 @@
                       {% for post in posts %}
                       {% if post.gubun == "경남" %}
                       data.addRows([[{v:'KR-48',f:'경상남도'},{{post.localocccnt}},'{{ post.localocccnt|intcomma }}']]);
-                      ivalue['KR-48'] = '#9ECAE1';
+                      ivalue['KR-48'] = "{{post.gubun}}";
                       {% endif %}
                       {% endfor %}
                       {% endif %}
@@ -392,7 +393,7 @@
                       {% for post in posts %}
                       {% if post.gubun == "제주" %}
                       data.addRows([[{v:'KR-49',f:'제주도'},{{post.localocccnt}},'{{ post.localocccnt|intcomma }}']]);
-                      ivalue['KR-49'] = '#9ECAE1';
+                      ivalue['KR-49'] = "{{post.gubun}}";
                       {% endif %}
                       {% endfor %}
                       {% endif %}
@@ -401,7 +402,7 @@
                       {% for post in posts %}
                       {% if post.gubun == "전북" %}
                       data.addRows([[{v:'KR-45',f:'전라북도'},{{post.localocccnt}},'{{ post.localocccnt|intcomma }}']]);
-                      ivalue['KR-45'] = '#9ECAE1';
+                      ivalue['KR-45'] = "{{post.gubun}}";
                       {% endif %}
                       {% endfor %}
                       {% endif %}
@@ -410,7 +411,7 @@
                       {% for post in posts %}
                       {% if post.gubun == "전남" %}
                       data.addRows([[{v:'KR-46',f:'전라남도'},{{post.localocccnt}},'{{ post.localocccnt|intcomma }}']]);
-                      ivalue['KR-46'] = '#9ECAE1';
+                      ivalue['KR-46'] = "{{post.gubun}}";
                       {% endif %}
                       {% endfor %}
                       {% endif %}
@@ -439,15 +440,31 @@
                               var selectedRow = selection[0].row;
                               var selectedRegion = data.getValue(selectedRow, 0);
                               if(ivalue[selectedRegion] != '') {
-                              window.open(ivalue[selectedRegion]);
+                                	 		if(ivalue[selectedRegion] != '') {
+                                              $.ajax({
+                                                  type:'GET',
+                                                  url:'/board/regions',
+                                                  data:{'get_data':ivalue[selectedRegion]},
+                                                  success:function(get_data){
+                                                      console.log("성공", get_data);
+                                                      $('#test').html(get_data)
+                                                  },
+                                                  error : function(xhr,errmsg,err) {
+                                                  console.log("실패");
+                                                  }
+                                             });
+                                      }
                               }
                           }
                       });
                       chart.draw(data, options);
                   }
                    </script>
+
                    <div id='visualization'></div>
+
                 </div>
+
                 <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="profile-tab">
 
 
@@ -759,13 +776,14 @@
                       }); // end am5.ready()
                       </script>
 <!-- HTML -->
+
 <div id="chartdiv"></div>
                 </div>
               </div>
             </div>
 
      </section>
-
+    <div id = 'test'>test</div>
   </main><!-- End #main -->
 
   <!-- ======= Footer ======= -->
@@ -796,6 +814,7 @@
 
   <!-- Template Main JS File -->
   <script src="{% static 'assets/js/main.js' %}"></script>
+
 
 </body>
 

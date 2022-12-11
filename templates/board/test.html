@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+{% if ajax_posts %}
+{% for post in ajax_posts %}
+<h1>{{ post.stdday }}</h1>
+{% endfor %}
+{% endif %}
+</body>
+</html>

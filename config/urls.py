@@ -21,4 +21,5 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('board/list/', board.views.list),
     path('board/News', board.views.News_list),
+    path('board/regions', board.views.regions),
 ]
