@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns="http://www.w3.org/1999/html">
 
 <head>
   {% load humanize %}
@@ -40,6 +40,21 @@
   * Author: BootstrapMade.com
   * License: https://bootstrapmade.com/license/
   ======================================================== -->
+
+
+
+  <!-- =======================================================
+  jaeyeol fornt
+  - google -
+  ======================================================== -->
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Rubik+Vinyl&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Jua&display=swap" rel="stylesheet">
+
 
 
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700);" rel="stylesheet" >
@@ -158,9 +173,9 @@
             <!-- Sales Card -->
             <div class="col-xxl-4 col-md-6">
               <div class="card info-card sales-card">
-                <div class="card-body">
+                <div class="card-body1">
 
-                  <h5 class="card-title"><center>누적 확진자</center></h5>
+                  <h5 class="card-title"><span style="font-family: 'Jua', sans-serif;"><span style="color: black;"><center>누적 확진자</center></span></span></h5>
 
                     {% if posts %}
                     {% for post in posts %}
@@ -186,7 +201,7 @@
             <div class="col-xxl-4 col-md-6">
               <div class="card info-card sales-card">
                 <div class="card-body">
-                  <h5 class="card-title"><center>사망자</center></h5>
+                  <h5 class="card-title"><span style="font-family: 'Jua', sans-serif;"><span style="color: black;"><center>사망자</center></span></span></h5>
 
                     {% if posts %}
                     {% for post in posts %}
@@ -209,7 +224,7 @@
             <div class="col-xxl-4 col-md-6">
               <div class="card info-card sales-card">
                 <div class="card-body">
-                  <h5 class="card-title"><center>오늘 확진자</center></h5>
+                  <h5 class="card-title"><span style="font-family: 'Jua', sans-serif;"><span style="color: black;"><center>오늘 확진자</center></span></span></h5>
 
                     {% if posts %}
                     {% for post in posts %}
@@ -232,7 +247,18 @@
             <div class="col-12">
               <div class="card">
 
+                <div class="filter">
+                  <a class="icon" href="#" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></a>
+                  <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
+                    <li class="dropdown-header text-start">
+                      <h6>Filter</h6>
+                    </li>
 
+                    <li><a class="dropdown-item" href="#">Today</a></li>
+                    <li><a class="dropdown-item" href="#">This Month</a></li>
+                    <li><a class="dropdown-item" href="#">This Year</a></li>
+                  </ul>
+                </div>
 
 
                 <div class="card-body">
@@ -242,14 +268,14 @@
               <!-- Pills Tabs -->
               <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
                 <li class="nav-item" role="presentation">
-                  <button class="nav-link active" id="pills-home-tab" data-bs-toggle="pill" data-bs-target="#pills-home" type="button" role="tab" aria-controls="pills-home" aria-selected="true"><i class="bi bi-map"></i> 지도</button>
+                  <button class="nav-link active" id="pills-home-tab" data-bs-toggle="pill" data-bs-target="#pills-home" type="button" role="tab" aria-controls="pills-home" aria-selected="true"><span style="font-family: 'Jua', sans-serif; "><i class="bi bi-map"></i> 지도</span></button>
                 </li>
                 <li class="nav-item" role="presentation">
-                  <button class="nav-link" id="pills-profile-tab" data-bs-toggle="pill" data-bs-target="#pills-profile" type="button" role="tab" aria-controls="pills-profile" aria-selected="false"><i class="bi bi-list-ul"></i> 리스트</button>
+                  <button class="nav-link" id="pills-profile-tab" data-bs-toggle="pill" data-bs-target="#pills-profile" type="button" role="tab" aria-controls="pills-profile" aria-selected="false"><span style="font-family: 'Jua', sans-serif; "><i class="bi bi-list-ul"></i> 리스트</span></button>
               </ul>
               <div class="tab-content pt-2" id="myTabContent">
                 <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="home-tab">
-            <div style="float: left; width: 50%;">
+            <div style=" float: left; width: 55%;">
                                     <!-- Line Chart -->
                   <script type='text/javascript' src='http://www.google.com/jsapi'></script>
                   <script type='text/javascript'>google.load('visualization', '1', {'packages': ['geochart']});
@@ -408,7 +434,7 @@
 
                       var options = {
                           backgroundColor: {fill:'#FFFFFF',stroke:'#FFFFFF' ,strokeWidth:0 },
-                          colorAxis: {colors: ['#f0dddd', '#ed0c0c']},
+                          colorAxis: {colors: ['#e1e6f0', '#175de8']},
 
                           backgroundColor: {fill:'#FFFFFF',stroke:'#FFFFFF' ,strokeWidth:0 },
                           datalessRegionColor: '#f5f5f5',
@@ -456,7 +482,7 @@
                   </div>
 
 
-                  <div style="float: left; width: 50%;">
+                  <div style="float: left; width: 45%;">
 
                     <div id = 'test'></div>
 
@@ -519,10 +545,22 @@
             <div class="col-12">
               <div class="card recent-sales overflow-auto">
 
+                <div class="filter">
+                  <a class="icon" href="#" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></a>
+                  <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
+                    <li class="dropdown-header text-start">
+                      <h6>Filter</h6>
+                    </li>
+
+                    <li><a class="dropdown-item" href="#">Today</a></li>
+                    <li><a class="dropdown-item" href="#">This Month</a></li>
+                    <li><a class="dropdown-item" href="#">This Year</a></li>
+                  </ul>
+                </div>
 
                   <!-- Styles -->
                 <div class="card-body">
-                  <h5 class="card-title">Reports <span>/Today</span></h5>
+                  <h5 class="card-title"><span style="font-family: 'Jua', sans-serif; ">일일확진자 그래프</span> <span></span></h5>
                   <!-- Line Chart -->
                   <div id="reportsChart"></div>
 
@@ -587,7 +625,7 @@
 
                       // add label
                       chart.plotContainer.children.push(
-                        am5.Label.new(root, { text: "일일확진자 그래프", x: 100, y: 50 })
+                        am5.Label.new(root, { text: "", x: 100, y: 50 })
                       );
 
                       // Create axes

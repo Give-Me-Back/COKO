@@ -178,7 +178,9 @@ chart.appear(1000, 100);
 </script>
 
 <!-- HTML -->
-<div>서울</div>
+{% if get_data %}
+<div>{{ get_data  }}</div>
+{% endif %}
 <div id="chartdiv"></div>
 </body>
 </html>

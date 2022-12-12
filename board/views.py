@@ -44,7 +44,7 @@ def read(request):
 
 
 def News_list(request):
-    posts = News.objects.all().order_by('stdday')
+    posts = News.objects.all().order_by('pubdate')
     return render(request, 'board/news.html', {'posts': posts})
 
 
@@ -54,4 +54,4 @@ def regions(request):
     ajax_posts = Corona.objects.all().order_by('stdday')
     ajax_posts = ajax_posts.filter(gubun__icontains= get_data)
 
-    return render(request, 'board/test.html', {'ajax_posts': ajax_posts})
+    return render(request, 'board/test.html', {'ajax_posts': ajax_posts, 'get_data': get_data})

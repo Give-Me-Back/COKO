@@ -194,116 +194,15 @@
                       </tr>
                     </thead>
                     <tbody>
-                      <tr>
                         {% if posts %}
                         {% for post in posts %}
-                        {% if post.id == 1 %}
-                        <th scope="row"><a href="#"><img src="assets/img/product-1.jpg" alt=""></a></th>
-                        <td><a href="" class="text-primary fw-bold">{{ post.title }}</a></td>
-                        <td>{{ post.pubdate }}</td>
-                        {% endif %}
-                        {% endfor %}
-                        {% endif %}
-                      </tr>
                       <tr>
-                        {% if posts %}
-                        {% for post in posts %}
-                        {% if post.id == 2 %}
                         <th scope="row"><a href="#"><img src="assets/img/product-1.jpg" alt=""></a></th>
-                        <td><a href="{{ post.link }}" class="text-primary fw-bold">{{ post.title }}</a></td>
+                        <td><a href="{{ post.link }}" class="text-primary fw-bold">{% autoescape off %}{{ post.title }}{% endautoescape %}</a></td>
                         <td>{{ post.pubdate }}</td>
-                        {% endif %}
+                      </tr>
                         {% endfor %}
                         {% endif %}
-                      </tr>
-                      <tr>
-                        {% if posts %}
-                        {% for post in posts %}
-                        {% if post.id == 3 %}
-                        <th scope="row"><a href="#"><img src="assets/img/product-1.jpg" alt=""></a></th>
-                        <td><a href="#" class="text-primary fw-bold">{{ post.title }}</a></td>
-                        <td>{{ post.pubdate }}</td>
-                        {% endif %}
-                        {% endfor %}
-                        {% endif %}
-                      </tr>
-                      <tr>
-                        {% if posts %}
-                        {% for post in posts %}
-                        {% if post.id == 4 %}
-                        <th scope="row"><a href="#"><img src="assets/img/product-1.jpg" alt=""></a></th>
-                        <td><a href="#" class="text-primary fw-bold">{{ post.title }}</a></td>
-                        <td>{{ post.pubdate }}</td>
-                        {% endif %}
-                        {% endfor %}
-                        {% endif %}
-                      </tr>
-                      <tr>
-                        {% if posts %}
-                        {% for post in posts %}
-                        {% if post.id == 5 %}
-                        <th scope="row"><a href="#"><img src="assets/img/product-1.jpg" alt=""></a></th>
-                        <td><a href="#" class="text-primary fw-bold">{{ post.title }}</a></td>
-                        <td>{{ post.pubdate }}</td>
-                        {% endif %}
-                        {% endfor %}
-                        {% endif %}
-                      </tr>
-                      <tr>
-                        {% if posts %}
-                        {% for post in posts %}
-                        {% if post.id == 6 %}
-                        <th scope="row"><a href="#"><img src="assets/img/product-1.jpg" alt=""></a></th>
-                        <td><a href="#" class="text-primary fw-bold">{{ post.title }}</a></td>
-                        <td>{{ post.pubdate }}</td>
-                        {% endif %}
-                        {% endfor %}
-                        {% endif %}
-                      </tr>
-                      <tr>
-                        {% if posts %}
-                        {% for post in posts %}
-                        {% if post.id == 7 %}
-                        <th scope="row"><a href="#"><img src="assets/img/product-1.jpg" alt=""></a></th>
-                        <td><a href="#" class="text-primary fw-bold">{{ post.title }}</a></td>
-                        <td>{{ post.pubdate }}</td>
-                        {% endif %}
-                        {% endfor %}
-                        {% endif %}
-                      </tr>
-                      <tr>
-                        {% if posts %}
-                        {% for post in posts %}
-                        {% if post.id == 8 %}
-                        <th scope="row"><a href="#"><img src="assets/img/product-1.jpg" alt=""></a></th>
-                        <td><a href="#" class="text-primary fw-bold">{{ post.title }}</a></td>
-                        <td>{{ post.pubdate }}</td>
-                        {% endif %}
-                        {% endfor %}
-                        {% endif %}
-                      </tr>
-                      <tr>
-                        {% if posts %}
-                        {% for post in posts %}
-                        {% if post.id == 9 %}
-                        <th scope="row"><a href="#"><img src="assets/img/product-1.jpg" alt=""></a></th>
-                        <td><a href="#" class="text-primary fw-bold">{{ post.title }}</a></td>
-                        <td>{{ post.pubdate }}</td>
-                        {% endif %}
-                        {% endfor %}
-                        {% endif %}
-                      </tr>
-                      <tr>
-                        {% if posts %}
-                        {% for post in posts %}
-                        {% if post.id == 10 %}
-                        <th scope="row"><a href="#"><img src="assets/img/product-1.jpg" alt=""></a></th>
-                        <td><a href="#" class="text-primary fw-bold">{{ post.title }}</a></td>
-                        <td>{{ post.pubdate }}</td>
-                        {% endif %}
-                        {% endfor %}
-                        {% endif %}
-                      </tr>
                     </tbody>
                   </table>
 
