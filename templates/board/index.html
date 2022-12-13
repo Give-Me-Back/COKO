@@ -154,10 +154,10 @@
   <main id="main" class="main">
 
     <div class="pagetitle">
-      <h1>Dashboard</h1>
+      <h1>코로나현황판</h1>
       <nav>
         <ol class="breadcrumb">
-          <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+          <li class="breadcrumb-item"><a href="/board/list/">Home</a></li>
           <li class="breadcrumb-item active">Dashboard</li>
         </ol>
       </nav>
@@ -224,7 +224,7 @@
             <div class="col-xxl-4 col-md-6">
               <div class="card info-card sales-card">
                 <div class="card-body">
-                  <h5 class="card-title"><span style="font-family: 'Jua', sans-serif;"><span style="color: black;"><center>오늘 확진자</center></span></span></h5>
+                  <h5 class="card-title"><span style="font-family: 'Jua', sans-serif;"><span style="color: black;"><center>확진자</center></span></span></h5>
 
                     {% if posts %}
                     {% for post in posts %}
@@ -247,18 +247,6 @@
             <div class="col-12">
               <div class="card">
 
-                <div class="filter">
-                  <a class="icon" href="#" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></a>
-                  <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
-                    <li class="dropdown-header text-start">
-                      <h6>Filter</h6>
-                    </li>
-
-                    <li><a class="dropdown-item" href="#">Today</a></li>
-                    <li><a class="dropdown-item" href="#">This Month</a></li>
-                    <li><a class="dropdown-item" href="#">This Year</a></li>
-                  </ul>
-                </div>
 
 
                 <div class="card-body">
@@ -444,8 +432,8 @@
                           sizeAxis: {minValue: 1, maxValue:1,minSize:10,  maxSize: 10},
                           region:'KR', //country code
                           keepAspectRatio: true,
-                          width:530,
-                          height:400,
+                          width:590,
+                          height:570,
                           tooltip: {textStyle: {color: '#444444'}, trigger:'focus'}
                       };
 
@@ -484,7 +472,147 @@
 
                   <div style="float: left; width: 45%;">
 
-                    <div id = 'test'></div>
+                    <div id = 'test'>
+                      <style>
+                        #chartdiv1 {
+                          width: 90%;
+                          height: 500px;
+                        }
+                       </style>
+
+                        <!-- Resources -->
+                        <script src="https://cdn.amcharts.com/lib/5/index.js"></script>
+                        <script src="https://cdn.amcharts.com/lib/5/xy.js"></script>
+                        <script src="https://cdn.amcharts.com/lib/5/themes/Animated.js"></script>
+
+                        <!-- Chart code -->
+                        <script>
+                        am5.ready(function() {
+
+                        // Create root element
+                        // https://www.amcharts.com/docs/v5/getting-started/#Root_element
+                        var root = am5.Root.new("chartdiv1");
+
+
+                        // Set themes
+                        // https://www.amcharts.com/docs/v5/concepts/themes/
+                        root.setThemes([
+                          am5themes_Animated.new(root)
+                        ]);
+
+
+                        // Create chart
+                        // https://www.amcharts.com/docs/v5/charts/xy-chart/
+                        var chart = root.container.children.push(am5xy.XYChart.new(root, {
+                          panX: false,
+                          panY: false,
+                          wheelX: "panX",
+                          wheelY: "zoomX",
+                          layout: root.verticalLayout
+                        }));
+
+
+                        // Add legend
+                        // https://www.amcharts.com/docs/v5/charts/xy-chart/legend-xy-series/
+                        var legend = chart.children.push(am5.Legend.new(root, {
+                          centerX: am5.p50,
+                          x: am5.p50
+                        }))
+                        {% if d_posts %}
+                        var data = [
+                        {% for post in d_posts %}
+                        {% if post.gubun == '서울' %}
+                        {
+                          "year": "{{ post.stdday|date:'Y-m-d' }}",
+                          "income": {{ post.localocccnt }},
+                        },
+                        {% endif %}
+                        {% endfor %}
+                        ];;
+                        {% endif %}
+                        // Create axes
+                        // https://www.amcharts.com/docs/v5/charts/xy-chart/axes/
+                        var yAxis = chart.yAxes.push(
+                          am5xy.CategoryAxis.new(root, {
+                            categoryField: "year",
+                            renderer: am5xy.AxisRendererY.new(root, {
+                              cellStartLocation: 0.1,
+                              cellEndLocation: 0.9
+                            }),
+                            tooltip: am5.Tooltip.new(root, {})
+                          })
+                        );
+
+                        yAxis.data.setAll(data);
+
+                        var xAxis = chart.xAxes.push(
+                          am5xy.ValueAxis.new(root, {
+                            min: 0,
+                            renderer: am5xy.AxisRendererX.new(root, {})
+                          })
+                        );
+
+
+                        // Add series
+                        // https://www.amcharts.com/docs/v5/charts/xy-chart/series/
+                        var series1 = chart.series.push(am5xy.ColumnSeries.new(root, {
+                          name: "확진자 수",
+                          xAxis: xAxis,
+                          yAxis: yAxis,
+                          valueXField: "income",
+                          categoryYField: "year",
+                          sequencedInterpolation: true,
+                          tooltip: am5.Tooltip.new(root, {
+                            pointerOrientation: "horizontal",
+                            labelText: "[bold]{name}[/]: {valueX} 명"
+                          })
+                        }));
+
+                        series1.columns.template.setAll({
+                          height: am5.percent(70)
+                        });
+
+
+
+
+                        // Add legend
+                        // https://www.amcharts.com/docs/v5/charts/xy-chart/legend-xy-series/
+                        var legend = chart.children.push(am5.Legend.new(root, {
+                          centerX: am5.p50,
+                          x: am5.p50
+                        }));
+
+                        legend.data.setAll(chart.series.values);
+
+                        // Add cursor
+                        // https://www.amcharts.com/docs/v5/charts/xy-chart/cursor/
+                        var cursor = chart.set("cursor", am5xy.XYCursor.new(root, {
+                          behavior: "zoomY"
+                        }));
+                        cursor.lineX.set("visible", false);
+
+                        series1.data.setAll(data);
+
+                        // Make stuff animate on load
+                        // https://www.amcharts.com/docs/v5/concepts/animations/
+                        series1.appear();
+                        chart.appear(1000, 100);
+
+                        }); // end am5.ready()
+                        </script>
+
+                        <!-- HTML -->
+
+                          <span style="font-family: 'Jua', sans-serif;">
+                            <span style="font-size: 2.5em"> 서울 </span>
+                          </span>
+
+                        <div id="chartdiv1"></div>
+
+
+
+
+                    </div>
 
 
                  </div>
@@ -565,244 +693,240 @@
                   <div id="reportsChart"></div>
 
                   <!-- Styles -->
-                      <style>
-                      #chartdiv {
-                        width: 100%;
-                        height: 500px;
-                      }
-                      </style>
+<style>
+#chartdiv {
+  width: 100%;
+  height: 500px;
+}
+</style>
 
-                      <!-- Resources -->
-                      <script src="https://cdn.amcharts.com/lib/5/index.js"></script>
-                      <script src="https://cdn.amcharts.com/lib/5/xy.js"></script>
-                      <script src="https://cdn.amcharts.com/lib/5/themes/Animated.js"></script>
+<!-- Resources -->
+<script src="https://cdn.amcharts.com/lib/5/index.js"></script>
+<script src="https://cdn.amcharts.com/lib/5/xy.js"></script>
+<script src="https://cdn.amcharts.com/lib/5/themes/Animated.js"></script>
 
-                      <!-- Chart code -->
-                      <script>
-                      am5.ready(function() {
+<!-- Chart code -->
+<script>
+am5.ready(function() {
 
-                      // Create root element
-                      // https://www.amcharts.com/docs/v5/getting-started/#Root_element
-                      var root = am5.Root.new("chartdiv");
+// Create root element
+// https://www.amcharts.com/docs/v5/getting-started/#Root_element
+var root = am5.Root.new("chartdiv");
 
-                      // Set themes
-                      // https://www.amcharts.com/docs/v5/concepts/themes/
-                      root.setThemes([
-                        am5themes_Animated.new(root)
-                      ]);
+// Set themes
+// https://www.amcharts.com/docs/v5/concepts/themes/
+root.setThemes([
+  am5themes_Animated.new(root)
+]);
 
-                      root.dateFormatter.setAll({
-                        dateFormat: "yyyy-MM-dd",
-                        dateFields: ["valueX"]
-                      });
-                      {% if g_posts %}
-                      var data = [
+root.dateFormatter.setAll({
+  dateFormat: "yyyy-MM-dd",
+  dateFields: ["valueX"]
+});
+{% if g_posts %}
+var data = [
+  {% for post in g_posts %}
+  {
+    date: "{{ post.stdday|date:'Y-m-d' }}",
+    steps: {{ post.localocccnt }}
+  },
+  {% endfor %}
+];
+{% endif %}
+// Create chart
+// https://www.amcharts.com/docs/v5/charts/xy-chart/
+var chart = root.container.children.push(
+  am5xy.XYChart.new(root, {
+    focusable: true,
+    panX: true,
+    panY: false,
+    wheelX: "panX",
+    wheelY: "none"
+  })
+);
 
-                      {% for post in g_posts %}
-                        {
-                          date: "{{ post.stdday|date:'Y-m-d' }}",
-                          steps: {{ post.localocccnt }}
-                        },
-                      {% endfor %}
-                      ];
-                      {% endif %}
-                      // Create chart
-                      // https://www.amcharts.com/docs/v5/charts/xy-chart/
-                      var chart = root.container.children.push(
-                        am5xy.XYChart.new(root, {
-                          focusable: true,
-                          panX: true,
-                          panY: false,
-                          wheelX: "panX",
-                          wheelY: "none"
-                        })
-                      );
+var easing = am5.ease.linear;
 
-                      var easing = am5.ease.linear;
+// hide zoomout button
+chart.zoomOutButton.set("forceHidden", true);
 
-                      // hide zoomout button
-                      chart.zoomOutButton.set("forceHidden", true);
 
-                      // add label
-                      chart.plotContainer.children.push(
-                        am5.Label.new(root, { text: "", x: 100, y: 50 })
-                      );
 
-                      // Create axes
-                      // https://www.amcharts.com/docs/v5/charts/xy-chart/axes/
-                      var xRenderer = am5xy.AxisRendererX.new(root, {
-                        minGridDistance: 50,
-                        strokeOpacity: 0.2
-                      });
-                      xRenderer.grid.template.set("forceHidden", true);
+// Create axes
+// https://www.amcharts.com/docs/v5/charts/xy-chart/axes/
+var xRenderer = am5xy.AxisRendererX.new(root, {
+  minGridDistance: 50,
+  strokeOpacity: 0.2
+});
+xRenderer.grid.template.set("forceHidden", true);
 
-                      var xAxis = chart.xAxes.push(
-                        am5xy.DateAxis.new(root, {
-                          maxDeviation: 0.49,
-                          snapTooltip: false,
-                          baseInterval: {
-                            timeUnit: "day",
-                            count: 1
-                          },
-                          renderer: xRenderer,
-                          tooltip: am5.Tooltip.new(root, {})
-                        })
-                      );
+var xAxis = chart.xAxes.push(
+  am5xy.DateAxis.new(root, {
+    maxDeviation: 0.49,
+    snapTooltip: false,
+    baseInterval: {
+      timeUnit: "day",
+      count: 1
+    },
+    renderer: xRenderer,
+    tooltip: am5.Tooltip.new(root, {})
+  })
+);
 
-                      var yRenderer = am5xy.AxisRendererY.new(root, { inside: true });
-                      yRenderer.grid.template.set("forceHidden", true);
+var yRenderer = am5xy.AxisRendererY.new(root, { inside: true });
+yRenderer.grid.template.set("forceHidden", true);
 
-                      var yAxis = chart.yAxes.push(
-                        am5xy.ValueAxis.new(root, {
-                          maxDeviation: 0,
-                          renderer: yRenderer
-                        })
-                      );
+var yAxis = chart.yAxes.push(
+  am5xy.ValueAxis.new(root, {
+    maxDeviation: 0,
+    renderer: yRenderer
+  })
+);
 
-                      // Add series
-                      // https://www.amcharts.com/docs/v5/charts/xy-chart/series/
-                      var series = chart.series.push(
-                        am5xy.ColumnSeries.new(root, {
-                          xAxis: xAxis,
-                          yAxis: yAxis,
-                          valueYField: "steps",
-                          valueXField: "date",
-                          tooltip: am5.Tooltip.new(root, {
-                            pointerOrientation: "vertical",
-                            labelText: "{valueY}"
-                          })
-                        })
-                      );
+// Add series
+// https://www.amcharts.com/docs/v5/charts/xy-chart/series/
+var series = chart.series.push(
+  am5xy.ColumnSeries.new(root, {
+    xAxis: xAxis,
+    yAxis: yAxis,
+    valueYField: "steps",
+    valueXField: "date",
+    tooltip: am5.Tooltip.new(root, {
+      pointerOrientation: "vertical",
+      labelText: "{valueY}"
+    })
+  })
+);
 
-                      series.columns.template.setAll({
-                        cornerRadiusTL: 15,
-                        cornerRadiusTR: 15,
-                        maxWidth: 30,
-                        strokeOpacity: 0
-                      });
+series.columns.template.setAll({
+  cornerRadiusTL: 15,
+  cornerRadiusTR: 15,
+  maxWidth: 30,
+  strokeOpacity: 0
+});
 
-                      series.columns.template.adapters.add("fill", function (fill, target) {
-                        if (target.dataItem.get("valueY") < 6000) {
-                          return am5.color(0xdadada);
-                        }
-                        return fill;
-                      });
+series.columns.template.adapters.add("fill", function (fill, target) {
+  if (target.dataItem.get("valueY") < 6000) {
+    return am5.color(0xdadada);
+  }
+  return fill;
+});
 
-                      // Set up data processor to parse string dates
-                      // https://www.amcharts.com/docs/v5/concepts/data/#Pre_processing_data
-                      series.data.processor = am5.DataProcessor.new(root, {
-                        dateFormat: "yyyy-MM-dd",
-                        dateFields: ["date"]
-                      });
+// Set up data processor to parse string dates
+// https://www.amcharts.com/docs/v5/concepts/data/#Pre_processing_data
+series.data.processor = am5.DataProcessor.new(root, {
+  dateFormat: "yyyy-MM-dd",
+  dateFields: ["date"]
+});
 
-                      series.data.setAll(data);
+series.data.setAll(data);
 
-                      // do not allow tooltip  to move horizontally
-                      series.get("tooltip").adapters.add("x", function (x) {
-                        return chart.plotContainer.toGlobal({
-                          x: chart.plotContainer.width() / 2,
-                          y: 0
-                        }).x;
-                      });
+// do not allow tooltip  to move horizontally
+series.get("tooltip").adapters.add("x", function (x) {
+  return chart.plotContainer.toGlobal({
+    x: chart.plotContainer.width() / 2,
+    y: 0
+  }).x;
+});
 
-                      // add ranges
-                      var goalRange = yAxis.createAxisRange(yAxis.makeDataItem({
-                        value: 6000
-                      }));
+// add ranges
+var goalRange = yAxis.createAxisRange(yAxis.makeDataItem({
+  value: 6000
+}));
 
-                      goalRange.get("grid").setAll({
-                        forceHidden: false,
-                        strokeOpacity: 0.2
-                      });
+goalRange.get("grid").setAll({
+  forceHidden: false,
+  strokeOpacity: 0.2
+});
 
-                      var goalLabel = goalRange.get("label");
+var goalLabel = goalRange.get("label");
 
-                      goalLabel.setAll({
-                        centerY: am5.p100,
-                        centerX: am5.p100,
-                        text: "Goal"
-                      });
+goalLabel.setAll({
+  centerY: am5.p100,
+  centerX: am5.p100,
+  text: "Goal"
+});
 
-                      // put to other side
-                      goalLabel.adapters.add("x", function (x) {
-                        return chart.plotContainer.width();
-                      });
+// put to other side
+goalLabel.adapters.add("x", function (x) {
+  return chart.plotContainer.width();
+});
 
-                      var goalRange2 = yAxis.createAxisRange(yAxis.makeDataItem({
-                        value: 12000
-                      }));
+var goalRange2 = yAxis.createAxisRange(yAxis.makeDataItem({
+  value: 12000
+}));
 
-                      goalRange2.get("grid").setAll({
-                        forceHidden: false,
-                        strokeOpacity: 0.2
-                      });
+goalRange2.get("grid").setAll({
+  forceHidden: false,
+  strokeOpacity: 0.2
+});
 
-                      var goalLabel2 = goalRange2.get("label");
+var goalLabel2 = goalRange2.get("label");
 
-                      goalLabel2.setAll({
-                        centerY: am5.p100,
-                        centerX: am5.p100,
-                        text: "2 x Goal"
-                      });
+goalLabel2.setAll({
+  centerY: am5.p100,
+  centerX: am5.p100,
+  text: "2 x Goal"
+});
 
-                      // put to other side
-                      goalLabel2.adapters.add("x", function (x) {
-                        return chart.plotContainer.width();
-                      });
+// put to other side
+goalLabel2.adapters.add("x", function (x) {
+  return chart.plotContainer.width();
+});
 
-                      // reposition when width changes
-                      chart.plotContainer.onPrivate("width", function () {
-                        goalLabel.markDirtyPosition();
-                        goalLabel2.markDirtyPosition();
-                      });
+// reposition when width changes
+chart.plotContainer.onPrivate("width", function () {
+  goalLabel.markDirtyPosition();
+  goalLabel2.markDirtyPosition();
+});
 
-                      // Add cursor
-                      // https://www.amcharts.com/docs/v5/charts/xy-chart/cursor/
-                      var cursor = chart.set("cursor", am5xy.XYCursor.new(root, {
-                        alwaysShow: true,
-                        behavior: "none",
-                        positionX: 0.5 // make it always be at the center
-                      }));
-                      cursor.lineY.set("visible", false);
+// Add cursor
+// https://www.amcharts.com/docs/v5/charts/xy-chart/cursor/
+var cursor = chart.set("cursor", am5xy.XYCursor.new(root, {
+  alwaysShow: true,
+  behavior: "none",
+  positionX: 0.5 // make it always be at the center
+}));
+cursor.lineY.set("visible", false);
 
-                      // zoom to last 11 days
-                      series.events.on("datavalidated", function () {
-                        var toTime =
-                          series.dataItems[series.dataItems.length - 1].get("valueX") +
-                          am5.time.getDuration("day", 1);
-                        var fromTime = series.dataItems[series.dataItems.length - 11].get("valueX");
+// zoom to last 11 days
+series.events.on("datavalidated", function () {
+  var toTime =
+    series.dataItems[series.dataItems.length - 1].get("valueX") +
+    am5.time.getDuration("day", 1);
+  var fromTime = series.dataItems[series.dataItems.length - 11].get("valueX");
 
-                        xAxis.zoomToValues(fromTime, toTime);
-                      });
+  xAxis.zoomToValues(fromTime, toTime);
+});
 
-                      // when plot are is released, round zoom to nearest days
-                      chart.plotContainer.events.on("globalpointerup", function () {
-                        var dayDuration = am5.time.getDuration("day", 1);
+// when plot are is released, round zoom to nearest days
+chart.plotContainer.events.on("globalpointerup", function () {
+  var dayDuration = am5.time.getDuration("day", 1);
 
-                        var firstTime = am5.time
-                          .round(new Date(series.dataItems[0].get("valueX")), "day", 1)
-                          .getTime();
-                        var lastTime =
-                          series.dataItems[series.dataItems.length - 1].get("valueX") + dayDuration;
-                        var totalTime = lastTime - firstTime;
-                        var days = totalTime / dayDuration;
+  var firstTime = am5.time
+    .round(new Date(series.dataItems[0].get("valueX")), "day", 1)
+    .getTime();
+  var lastTime =
+    series.dataItems[series.dataItems.length - 1].get("valueX") + dayDuration;
+  var totalTime = lastTime - firstTime;
+  var days = totalTime / dayDuration;
 
-                        var roundedStart =
-                          firstTime + Math.round(days * xAxis.get("start")) * dayDuration;
-                        var roundedEnd =
-                          firstTime + Math.round(days * xAxis.get("end")) * dayDuration;
+  var roundedStart =
+    firstTime + Math.round(days * xAxis.get("start")) * dayDuration;
+  var roundedEnd =
+    firstTime + Math.round(days * xAxis.get("end")) * dayDuration;
 
-                        xAxis.zoomToValues(roundedStart, roundedEnd);
-                      });
+  xAxis.zoomToValues(roundedStart, roundedEnd);
+});
 
-                      // Make stuff animate on load
-                      // https://www.amcharts.com/docs/v5/concepts/animations/
-                      chart.appear(1000, 50);
+// Make stuff animate on load
+// https://www.amcharts.com/docs/v5/concepts/animations/
+chart.appear(1000, 50);
 
-                      }); // end am5.ready()
-                      </script>
+}); // end am5.ready()
+</script>
+
 <!-- HTML -->
-
 <div id="chartdiv"></div>
                 </div>
               </div>
@@ -815,14 +939,14 @@
   <!-- ======= Footer ======= -->
   <footer id="footer" class="footer">
     <div class="copyright">
-      &copy; Copyright <strong><span>NiceAdmin</span></strong>. All Rights Reserved
+      &copy; KIM <strong><span>LEE</span></strong> BAEK
     </div>
     <div class="credits">
       <!-- All the links in the footer should remain intact. -->
       <!-- You can delete the links only if you purchased the pro version. -->
       <!-- Licensing information: https://bootstrapmade.com/license/ -->
       <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/nice-admin-bootstrap-admin-html-template/ -->
-      Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+      COKO BY GIVE<span> ME </span>BACK
     </div>
   </footer><!-- End Footer -->
 
