@@ -19,7 +19,7 @@ import board.views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('board/list/', board.views.list),
-    path('board/News', board.views.News_list),
-    path('board/regions', board.views.regions),
+    path('', board.views.list),
+    path('News', board.views.News_list),
+    path('regions', board.views.regions),
 ]
