@@ -33,3 +33,6 @@ def regions(request):
     ajax_posts = ajax_posts.filter(gubun__icontains= get_data)
     print("regions 실행")
     return render(request, 'board/test.html', {'ajax_posts': ajax_posts, 'get_data': get_data})
+
+def default(request):
+    return render(request, 'board/default.html')
