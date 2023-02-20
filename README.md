@@ -25,7 +25,7 @@
 - 크론탭을 사용해 매일 0시에 데이터를 갱신하여 DB를 최신화 한다.
 
 
-### 2-2. 3계층
+### 2-2. 아키텍처
 ![3tier_1](https://user-images.githubusercontent.com/33945185/208353630-de45a7c8-0568-4262-bf3e-216377710a0a.png)
 
 ![3tier_2](https://user-images.githubusercontent.com/33945185/208352976-a6248983-5a9d-404b-a740-b4ecda0a3d6e.png)
